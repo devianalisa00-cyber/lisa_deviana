@@ -1,4 +1,425 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HALLO LISA</title>
+
+<style>
+:root {
+    --navy: #14213d;
+    --navy-soft: #22345c;
+    --amber: #fca311;
+    --paper: #f6f4ef;
+    --ink: #1b1b1f;
+    --line: #d9d5ca;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+}
+
+/* NAVIGASI */
+header {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: .8rem 1.2rem;
+    gap: .5rem;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3rem;
+}
+
+nav ul a {
+    display: block;
+    color: #dfe6f3;
+    text-decoration: none;
+    padding: .4rem .9rem;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+}
+
+nav ul a:hover {
+    background: var(--navy-soft);
+    color: white;
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 1.2rem;
+}
+
+/* HALAMAN */
+.halaman {
+    display: none;
+    padding: 3rem 0 4rem;
+}
+
+.halaman:target {
+    display: block;
+}
+
+#beranda {
+    display: block;
+}
+
+.halaman:target ~ #beranda {
+    display: none;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    line-height: 1.15;
+    color: var(--navy);
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+    padding-bottom: .5rem;
+    border-bottom: 3px solid var(--amber);
+    display: inline-block;
+}
+
+/* BERANDA */
+.hero {
+    padding: 3rem 0 1rem;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    margin: 1.2rem 0 2rem;
+}
+
+.menu-kartu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.menu-kartu a {
+    display: block;
+    text-decoration: none;
+    background: white;
+    border: 2px solid var(--navy);
+    border-radius: 10px;
+    padding: 1.3rem;
+    transition: .2s;
+}
+
+.menu-kartu a:hover {
+    background: var(--navy);
+    color: white;
+}
+
+.menu-kartu strong {
+    display: block;
+    font-size: 1.25rem;
+}
+
+.menu-kartu span {
+    font-family: Arial, sans-serif;
+    font-size: .9rem;
+}
+
+/* BIODATA */
+.biodata {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.foto {
+    width: 180px;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 3px solid var(--navy);
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background: white;
+}
+
+th, td {
+    padding: .7rem 1rem;
+    border: 1px solid var(--line);
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: .95rem;
+}
+
+th {
+    background: var(--navy);
+    color: white;
+}
+
+.biodata th {
+    width: 35%;
+}
+
+/* GALLERY */
+.galeri {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 1rem;
+}
+
+.galeri figure {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.galeri img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+}
+
+.galeri figcaption {
+    padding: .6rem .9rem;
+    font-family: Arial, sans-serif;
+    font-size: .9rem;
+}
+
+/* VIDEO */
+.video-wrap {
+    max-width: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: black;
+}
+
+.video-wrap video {
+    width: 100%;
+    display: block;
+}
+
+.video-ket {
+    margin-top: 1rem;
+}
+
+/* TUGAS */
+.status {
+    display: inline-block;
+    padding: .1rem .6rem;
+    border-radius: 20px;
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+.selesai {
+    background: #d8f0d8;
+    color: #1f5a1f;
+}
+
+.proses {
+    background: #fdeac2;
+    color: #7a5200;
+}
+
+.tombol-form {
+    display: inline-block;
+    background: var(--navy);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: .9rem;
+    transition: .2s;
+}
+
+.tombol-form:hover {
+    background: var(--amber);
+    color: var(--navy);
+}
+
+.kembali {
+    display: inline-block;
+    margin-top: 2rem;
+    font-family: Arial, sans-serif;
+    color: var(--navy);
+}
+
+/* FOOTER */
+footer {
+    background: var(--navy);
+    color: #c5cee0;
+    text-align: center;
+    padding: 1.5rem;
+    font-family: Arial, sans-serif;
+    font-size: .9rem;
+}
+
+/* RESPONSIVE */
+@media(max-width: 640px) {
+    nav {
+        justify-content: center;
+    }
+
+    .biodata {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .foto {
+        width: 150px;
+        height: 180px;
+    }
+
+    .biodata table {
+        font-size: .85rem;
+    }
+
+    th, td {
+        padding: .5rem;
+        font-size: .85rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+    <a class="logo" href="#beranda">HALLO LISA</a>
+
+    <ul>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#biodata">Biodata</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#video">Video</a></li>
+        <li><a href="#tugas">Tugas</a></li>
+    </ul>
+</nav>
+</header>
+
+<main>
+
+<!-- BIODATA -->
+<section class="halaman" id="biodata">
+<h2>Biodata</h2>
+
+<div class="biodata">
+    <div class="foto">
+        <img src="FOTO profil jpg sistem.jpeg" alt="Foto Profil Lisa">
+    </div>
+
+    <table>
+        <tr><th>Nama Lengkap</th><td>Lisa Deviana</td></tr>
+        <tr><th>Tempat, Tanggal Lahir</th><td>Kotabaru, 29 Desember 2005</td></tr>
+        <tr><th>Jenis Kelamin</th><td>Perempuan</td></tr>
+        <tr><th>Agama</th><td>Islam</td></tr>
+        <tr><th>Alamat</th><td>Banjarbaru, Kalimantan Selatan</td></tr>
+        <tr><th>Sekolah / Kampus</th><td>Universitas Lambung Mangkurat</td></tr>
+        <tr><th>Hobi</th><td>Olahraga</td></tr>
+        <tr><th>Email</th><td>devianalisa00gmail.com</td></tr>
+    </table>
+</div>
+
+<a class="kembali" href="#beranda">← Kembali ke beranda</a>
+</section>
+
+<!-- GALLERY -->
+<section class="halaman" id="gallery">
+<h2>Gallery</h2>
+
+<div class="galeri">
+    <figure>
+        <img src="foto rumah tampak depan .jpeg" alt="Foto depan rumah">
+        <figcaption>Foto 1 - Tampak Depan</figcaption>
+    </figure>
+
+    <figure>
+        <img src="foto rumah tampak kanan.jpeg" alt="Foto kanan rumah">
+        <figcaption>Foto 2 - Tampak Kanan</figcaption>
+    </figure>
+
+    <figure>
+        <img src="foto rumah tampak kiri.jpeg" alt="Foto kiri rumah">
+        <figcaption>Foto 3 - Tampak Kiri</figcaption>
+    </figure>
+</div>
+
+<a class="kembali" href="#beranda">← Kembali ke beranda</a>
+</section>
+
+<!-- VIDEO -->
+<section class="halaman" id="video">
+<h2>Video</h2>
+
+<div class="video-wrap">
+    <video controls>
+        <source src="vidio sistem.mp4" type="video/mp4">
+        Browser tidak mendukung video.
+    </video>
+</div>
+
+<p class="video-ket">Video dokumentasi pribadi saya.</p>
+
+<a class="kembali" href="#beranda">← Kembali ke beranda</a>
+</section>
+
 <!-- TUGAS -->
 <section class="halaman" id="tugas">
 <h2>Tugas</h2>
@@ -12,7 +433,6 @@
         <th>Aksi</th>
     </tr>
 
-    <!-- TUGAS 2 -->
     <tr>
         <td>1</td>
         <td>Tugas 2</td>
@@ -28,7 +448,6 @@
         </td>
     </tr>
 
-    <!-- TUGAS 3 -->
     <tr>
         <td>2</td>
         <td>Tugas 3</td>
@@ -44,6 +463,51 @@
         </td>
     </tr>
 </table>
-
 <a class="kembali" href="#beranda">← Kembali ke beranda</a>
 </section>
+
+<!-- BERANDA -->
+<section class="halaman" id="beranda">
+
+<div class="hero">
+    <h1>HALLO LISA DEVIANA</h1>
+
+    <p>
+        Halo! Senang kamu mampir. Di sini kamu bisa mengenal
+        saya lebih jauh, melihat foto dan video, serta tugas-tugas
+        yang sudah saya kerjakan. Silakan pilih menu di bawah.
+    </p>
+</div>
+
+<div class="menu-kartu">
+    <a href="#biodata">
+        <strong>Biodata</strong>
+        <span>Kenalan dengan saya</span>
+    </a>
+
+    <a href="#gallery">
+        <strong>Gallery</strong>
+        <span>Kumpulan foto</span>
+    </a>
+
+    <a href="#video">
+        <strong>Video</strong>
+        <span>Tonton video</span>
+    </a>
+
+    <a href="#tugas">
+        <strong>Tugas</strong>
+        <span>Daftar tugas kuliah</span>
+    </a>
+</div>
+
+</section>
+
+</main>
+
+<footer>
+    &copy; 2026 Website Pribadi Lisa Deviana
+</footer>
+
+</body>
+</html>

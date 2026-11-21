@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -272,6 +271,11 @@ th {
     color: #7a5200;
 }
 
+.belum {
+    background: #e6e6e6;
+    color: #555;
+}
+
 .tombol-form {
     display: inline-block;
     background: var(--navy);
@@ -287,6 +291,17 @@ th {
 .tombol-form:hover {
     background: var(--amber);
     color: var(--navy);
+}
+
+.tombol-nonaktif {
+    display: inline-block;
+    background: #cfcfcf;
+    color: #777;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-size: .9rem;
+    cursor: not-allowed;
 }
 
 .kembali {
@@ -373,7 +388,7 @@ footer {
         <tr><th>Alamat</th><td>Banjarbaru, Kalimantan Selatan</td></tr>
         <tr><th>Sekolah / Kampus</th><td>Universitas Lambung Mangkurat</td></tr>
         <tr><th>Hobi</th><td>Olahraga</td></tr>
-        <tr><th>Email</th><td>devianalisa00gmail.com</td></tr>
+        <tr><th>Email</th><td>devianalisa00@gmail.com</td></tr>
     </table>
 </div>
 
@@ -435,12 +450,12 @@ footer {
 
     <tr>
         <td>1</td>
-        <td>Tugas 2</td>
-        <td>Pengisian Google Form</td>
-        <td><span class="status proses">Dikerjakan</span></td>
+        <td>Tugas 1</td>
+        <td>Membuat Google Form</td>
+        <td><span class="status selesai">Selesai</span></td>
         <td>
             <a class="tombol-form"
-               href="https://forms.gle/YSXTEBSEzdLWHxdq9"
+               href="https://docs.google.com/forms/d/e/1FAIpQLSfBhvZP2rqo_rvaTp0P5T5xRE3wVMMTjW4yIrU_Q7Sip-vCBg/viewform?usp=dialog"
                target="_blank"
                rel="noopener noreferrer">
                Buka Form
@@ -450,19 +465,44 @@ footer {
 
     <tr>
         <td>2</td>
-        <td>Tugas 3</td>
-        <td>Pengisian Google Form</td>
-        <td><span class="status proses">Dikerjakan</span></td>
+        <td>Tugas 2</td>
+        <td>Tampilan Google Sheet (data hasil isian Google Form)</td>
+        <td><span class="status selesai">Selesai</span></td>
         <td>
             <a class="tombol-form"
-               href="https://docs.google.com/forms/d/e/1FAIpQLSd3YMgTP7nSYZxMyYNkcfLbWxe_Vmusq8IfRyDdhoqAIHlY0g/viewform"
+               href="https://docs.google.com/spreadsheets/d/1PG_aCaEUS7ArE9Uc-aT1s1IhuF6207DZ7yfVpxPvwGU/edit?usp=sharing"
                target="_blank"
                rel="noopener noreferrer">
-               Buka Form
+               Buka Sheet
             </a>
         </td>
     </tr>
+
+    <tr>
+        <td>3</td>
+        <td>Tugas 3</td>
+        <td>-</td>
+        <td><span class="status belum">Belum ada</span></td>
+        <td><span class="tombol-nonaktif">Segera</span></td>
+    </tr>
+
+    <tr>
+        <td>4</td>
+        <td>Tugas 4</td>
+        <td>-</td>
+        <td><span class="status belum">Belum ada</span></td>
+        <td><span class="tombol-nonaktif">Segera</span></td>
+    </tr>
+
+    <tr>
+        <td>5</td>
+        <td>Tugas 5</td>
+        <td>-</td>
+        <td><span class="status belum">Belum ada</span></td>
+        <td><span class="tombol-nonaktif">Segera</span></td>
+    </tr>
 </table>
+
 <a class="kembali" href="#beranda">← Kembali ke beranda</a>
 </section>
 
